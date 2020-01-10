@@ -16,17 +16,12 @@ Example usage::
 
 """
 
-try:
-    import sqlite3
-except ImportError:
-    from pysqlite2 import dbapi2 as sqlite3
+from __future__ import absolute_import, unicode_literals
 
-import os
 import csv
-try:
-    from settings import db_location, csv_location
-except:
-    from pyzipcode.settings import db_location, csv_location
+import sqlite3
+
+from pyzipcode.settings import db_location, csv_location
 
 
 def run_import():
@@ -46,7 +41,7 @@ def run_import():
     c.execute("CREATE INDEX state_index ON ZipCodes(state);")
 
     reader = csv.reader(open(csv_location, "rb"))
-    reader.next() # prime it
+    reader.next()  # prime it
 
     for row in reader:
         zip, city, state, lat, longt, timezone, dst = row
@@ -60,7 +55,7 @@ def run_import():
                 float(lat),
                 timezone,
                 dst
-        ))
+            ))
 
     conn.commit()
 

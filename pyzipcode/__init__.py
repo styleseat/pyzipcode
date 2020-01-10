@@ -1,13 +1,11 @@
 """The pyzipcode package"""
 
-
-from pyzipcode.settings import db_location
-try:
-    import sqlite3
-except ImportError:
-    from pysqlite2 import dbapi2 as sqlite3
+from __future__ import absolute_import, division, unicode_literals
 
 import time
+import sqlite3
+
+from pyzipcode.settings import db_location
 
 
 class ConnectionManager(object):
@@ -100,6 +98,7 @@ class ZipNotFoundException(Exception):
     Exception that is raised when a zipcode is not found in the database
     """
     pass
+
 
 class ZipCodeDatabase(object):
     """
