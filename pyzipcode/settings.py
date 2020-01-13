@@ -2,8 +2,10 @@
 Settings common throughout the pyzipcode package.
 """
 
+from __future__ import absolute_import, unicode_literals
 
 import os
+
 
 # The name of the SQLite database file
 db_filename = 'zipcodes.db'
