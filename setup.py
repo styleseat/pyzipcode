@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '1.1'
+version = '1.2'
 
 setup(name='pyzipcode',
       version=version,
@@ -15,9 +15,7 @@ setup(name='pyzipcode',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
       zip_safe=False,
-      install_requires=[
-        'pysqlite'
-      ],
+      install_requires=[],
       python_requires='>=2.6, !=3.0.*, !=3.1.*, !=3.2.*, <4',
       entry_points="""
       # -*- Entry points: -*-
